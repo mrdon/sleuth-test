@@ -1,0 +1,8 @@
+rules:
+  - ensure-lots-of-reviewers:
+      description: "Ensure lots-of-reviewers is on big pull requests"
+      conditions:
+        - description: "Number of reviewers is more than 3"
+          expression: "number_reviewers>3"
+      actions:
+        - add_label: "lots-of-reviewers"
