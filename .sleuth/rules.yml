@@ -3,6 +3,6 @@ rules:
       description: "Ensure lots-of-reviewers is on big pull requests"
       conditions:
         - description: "Number of reviewers is more than 3"
-          expression: "number_reviewers=0"
+          expression: "number_reviewers=2"
       actions:
         - add_label: "no-reviewers"
