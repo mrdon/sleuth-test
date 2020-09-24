@@ -7,3 +7,4 @@ rules:
       actions:
         - add_label: "no-reviewers"
 
+
