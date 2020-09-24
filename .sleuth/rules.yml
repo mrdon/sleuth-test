@@ -6,3 +6,4 @@ rules:
           expression: "number_reviewers=2"
       actions:
         - add_label: "no-reviewers"
+
