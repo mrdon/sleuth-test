@@ -7,4 +7,11 @@ rules:
       actions:
         - add_label: "no-reviewers"
 
+  - update_if_dirty:
+      description: "Update pull requests if their source branch changes"
+      triggers:
+        - source_branch_updated
+      actions:
+        - update_pull_request_source
+
 
