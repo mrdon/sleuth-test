@@ -5,7 +5,7 @@ rules:
         - description: "Number of reviewers is more than 3"
           expression: "number_reviewers=0"
       actions:
-        - add_label: "no-reviewers"
+        - add_pull_request_label: "no-reviewers"
 
   - update_if_dirty:
       description: "Update pull requests if their source branch changes"
