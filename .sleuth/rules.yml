@@ -5,7 +5,7 @@ rules:
         - base_synced
         - label=mergeable
       actions:
-        - merge
+        - merge_pull_request
 
   - update_if_dirty:
       description: "Update pull requests if their base branch changes"
