@@ -14,9 +14,6 @@ rules:
       actions:
         - update_pull_request_base
 
-
- 
- 
  
  
  
