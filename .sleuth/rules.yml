@@ -13,7 +13,6 @@ rules:
         - base_branch_updated
       actions:
         - update_pull_request_base
-
  
  
  
