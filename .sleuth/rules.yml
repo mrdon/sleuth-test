@@ -1,19 +1,11 @@
 rules:
-  - auto-merge:
-      description: "Automerge any up to date pull requests"
+  - label-if-big:
+      description: "Label if big"
       conditions:
-        - behind=false
-        - label='mergeable'
+        - magnitude='Small'
       actions:
-        - merge_pull_request
+        - add_deploy_tag: 'smallish'
 
-  - update_if_dirty:
-      description: "Update pull requests if their base branch changes"
-      triggers:
-        - base_branch_updated
-      actions:
-        - update_pull_request_base
- 
  
  
  
