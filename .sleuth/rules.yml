@@ -5,6 +5,11 @@ rules:
         - magnitude='Small'
       actions:
         - add_deploy_tag: 'smallish'
+  - comment:
+      conditions:
+        - future_deploy=false
+      actions:
+        - notify_mentioned_issues
 
  
  
