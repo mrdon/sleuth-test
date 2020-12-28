@@ -8,6 +8,7 @@ rules:
   - comment:
       conditions:
         - future_deploy=false
+        - environment='Production'
       actions:
         - notify_mentioned_issues
 
