@@ -2,6 +2,8 @@ version: 2.1
 
 jobs:
   run-first:
+    docker:
+      - image: circleci/python:3.8.6
     steps:
       - run:
           name: Run first things
@@ -10,6 +12,8 @@ jobs:
             sleep 10
             echo "Done running things"
   run-second:
+    docker:
+      - image: circleci/python:3.8.6
     steps:
       - run:
           name: Run second things
