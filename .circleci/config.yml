@@ -30,4 +30,7 @@ workflows:
           requires:
             - run-first
       - run-second
+          requires:
+            - approve-second
+
 
