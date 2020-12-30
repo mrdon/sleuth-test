@@ -12,6 +12,14 @@ rules:
       actions:
         - notify_mentioned_issues
 
+  - quick-fixes:
+      conditions:
+        - environment='Production'
+        - future_deploy=false
+        - pr_labels='#quickfix'
+      actions:
+        - auto_approve_build: 'welcome'
+
  
  
  
