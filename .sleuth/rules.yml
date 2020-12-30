@@ -16,7 +16,7 @@ rules:
       conditions:
         - environment='Production'
         - future_deploy=false
-        - pr_labels='#quickfix'
+        - pr_labels='quickfix'
       actions:
         - auto_approve_build: 'welcome'
 
