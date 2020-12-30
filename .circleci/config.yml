@@ -29,7 +29,7 @@ workflows:
           type: approval
           requires:
             - run-first
-      - run-second
+      - run-second:
           requires:
             - approve-second
 
