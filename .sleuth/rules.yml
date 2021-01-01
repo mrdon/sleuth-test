@@ -29,8 +29,7 @@ rules:
       conditions:
         - environment='Production'
       actions:
-        - add_to_deploy_message_thread: |
-          It *worked*
+        - add_to_deploy_message_thread: "It *worked*"
  
  
  
