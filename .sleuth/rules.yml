@@ -25,6 +25,12 @@ rules:
         - deploy_message_reaction_plus_1>0
       actions:
         - add_deploy_tag: 'approved'
+  - deploy_msg:
+      conditions:
+        - environment='Production'
+      actions:
+        - add_to_deploy_message_thread: |
+          It *worked*
  
  
  
