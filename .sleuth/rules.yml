@@ -30,12 +30,13 @@ rules:
         - environment='Production'
       actions:
         - add_to_deploy_message_thread: "It *worked*"
- 
- 
- 
- 
- 
- 
+  - tag-if-healthy:
+      conditions:
+        - health='Healthy'
+      actions:
+        - add_deploy_tag: 'healthy'
+
+
  
  
  
