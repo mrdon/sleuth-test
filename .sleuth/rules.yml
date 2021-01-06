@@ -5,6 +5,9 @@ rules:
         - magnitude='Small'
       actions:
         - add_deploy_tag: 'smallish'
+        - slack_channel_message:
+            channel: '#tmp'
+            message: 'This is small'
   - comment:
       conditions:
         - future_deploy=false
