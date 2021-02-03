@@ -39,6 +39,12 @@ rules:
       actions:
         - add_deploy_tag: 'healthy'
 
+  - webhook-always:
+      conditions:
+        - environment='Production'
+      actions:
+        - webhook: 'https://webhook.site/a70e3c88-7850-4f99-a3e7-1b8c944ccf7'
+
 
  
  
