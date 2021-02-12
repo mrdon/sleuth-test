@@ -1,5 +1,5 @@
 rules:
-  - transition issues
+  - transition issues:
       conditions:
         - environment='Production'
       actions: 
