@@ -3,7 +3,8 @@ rules:
       conditions:
         - environment='Production'
       actions: 
-        - transition_mentioned_issues: DONE
+        - transition_mentioned_issues: 
+            state: DONE
 
 #   - label-if-big:
 #       description: "Label if big"
