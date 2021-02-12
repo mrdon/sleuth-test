@@ -1,9 +1,9 @@
 rules:
-  - transition issues:
+  - transition-mentioned-issues:
       conditions:
         - environment='Production'
       actions: 
-        - transition_issues: DONE
+        - transition_mentioned_issues: DONE
 
 #   - label-if-big:
 #       description: "Label if big"
