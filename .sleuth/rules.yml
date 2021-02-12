@@ -1,51 +1,57 @@
 rules:
-  - label-if-big:
-      description: "Label if big"
+  - transition issues
       conditions:
-        - magnitude='Small'
-      actions:
-        - add_deploy_tag: 'smallish'
-        - slack_channel_message:
-            channel: '#tmp'
-            message: 'This is small'
-  - comment:
-      conditions:
-        - future_deploy=false
-        - environment='Production'
-      actions:
-        - notify_mentioned_issues
+        environment='Production'
+      actions: 
+        - transition_issues: DONE
 
-  - quick-fixes:
-      conditions:
-        - environment='Production'
-        - future_deploy=false
-        - pr_labels='quickfix'
-      actions:
-        - auto_approve_build: 'welcome'
-
-  - reactions:
-      conditions:
-        - deploy_message_reaction_plus_1>0
-      actions:
-        - add_deploy_tag: 'approved'
-  - deploy_msg:
-      conditions:
-        - environment='Production'
-      actions:
-        - add_to_deploy_message_thread: "It *worked*"
-  - tag-if-healthy:
-      conditions:
-        - health='Healthy'
-      actions:
-        - add_deploy_tag: 'healthy'
-
-  - webhook-always:
-      conditions:
-        - environment='Production'
-      actions:
-        - webhook: 'https://webhook.site/a70e3c88-7850-4f99-a3e7-1b8c944ccf75'
-
-
- 
- 
- 
+#   - label-if-big:
+#       description: "Label if big"
+#       conditions:
+#         - magnitude='Small'
+#       actions:
+#         - add_deploy_tag: 'smallish'
+#         - slack_channel_message:
+#             channel: '#tmp'
+#             message: 'This is small'
+#   - comment:
+#       conditions:
+#         - future_deploy=false
+#         - environment='Production'
+#       actions:
+#         - notify_mentioned_issues
+# 
+#   - quick-fixes:
+#       conditions:
+#         - environment='Production'
+#         - future_deploy=false
+#         - pr_labels='quickfix'
+#       actions:
+#         - auto_approve_build: 'welcome'
+# 
+#   - reactions:
+#       conditions:
+#         - deploy_message_reaction_plus_1>0
+#       actions:
+#         - add_deploy_tag: 'approved'
+#   - deploy_msg:
+#       conditions:
+#         - environment='Production'
+#       actions:
+#         - add_to_deploy_message_thread: "It *worked*"
+#   - tag-if-healthy:
+#       conditions:
+#         - health='Healthy'
+#       actions:
+#         - add_deploy_tag: 'healthy'
+# 
+#   - webhook-always:
+#       conditions:
+#         - environment='Production'
+#       actions:
+#         - webhook: 'https://webhook.site/a70e3c88-7850-4f99-a3e7-1b8c944ccf75'
+# 
+# 
+#  
+#  
+#  
