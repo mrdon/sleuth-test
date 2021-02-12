@@ -1,7 +1,7 @@
 rules:
   - transition issues
       conditions:
-        environment='Production'
+        - environment='Production'
       actions: 
         - transition_issues: DONE
 
