@@ -8,7 +8,6 @@ rules:
   - run-deploy:
       conditions:
         - environment='Staging'
-        - deployed_for>'4h'
       actions:
         - trigger_build:
             parameters:
