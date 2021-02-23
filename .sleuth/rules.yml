@@ -11,7 +11,7 @@ rules:
       actions:
         - trigger_build:
             parameters:
-              run_deploy: True
+              run_deploy: true
 
 #   - label-if-big:
 #       description: "Label if big"
