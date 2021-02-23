@@ -6,6 +6,7 @@ parameters:
     type: boolean
   environment:
     type: string
+    default: staging
 
 jobs:
   run-first:
