@@ -5,7 +5,7 @@ parameters:
     default: false
     type: boolean
   environment:
-    type: String
+    type: string
 
 jobs:
   run-first:
