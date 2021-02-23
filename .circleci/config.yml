@@ -27,6 +27,7 @@ jobs:
           name: Run second things
           command: |
             echo "Done running second things"
+            echo "Hello <<parameters.environment>>"
 
 
 workflows:
