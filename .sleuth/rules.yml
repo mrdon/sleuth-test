@@ -5,6 +5,13 @@ rules:
       actions: 
         - transition_mentioned_issues: 
             state: DONE
+  - run-deploy:
+      conditions:
+        - environment='Staging'
+      actions:
+        - trigger_build:
+            parameters:
+              run_deploy: True
 
 #   - label-if-big:
 #       description: "Label if big"
