@@ -1,5 +1,10 @@
 version: 2.1
 
+parameters:
+  run_deploy:
+    default: false
+    type: boolean
+
 jobs:
   run-first:
     docker:
@@ -23,6 +28,7 @@ jobs:
 
 workflows:
   welcome:
+    unless: << pipeline.parameters.run_deploy >>
     jobs:
       - run-first
       - approve-second:
@@ -32,5 +38,10 @@ workflows:
       - run-second:
           requires:
             - approve-second
+
+  deploy:
+    when: << pipeline.parameters.run_deploy >>
+    jobs:
+      - run-second
 
 
