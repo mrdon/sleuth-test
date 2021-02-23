@@ -8,10 +8,12 @@ rules:
   - run-deploy:
       conditions:
         - environment='Staging'
+        - deployed_for>'4h'
       actions:
         - trigger_build:
             parameters:
               run_deploy: true
+              environment: production
 
 #   - label-if-big:
 #       description: "Label if big"

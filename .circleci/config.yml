@@ -4,6 +4,8 @@ parameters:
   run_deploy:
     default: false
     type: boolean
+  environment:
+    type: String
 
 jobs:
   run-first:
