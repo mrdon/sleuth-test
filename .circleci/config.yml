@@ -1,0 +1,36 @@
+version: 2.1
+
+jobs:
+  run-first:
+    docker:
+      - image: circleci/python:3.8.6
+    steps:
+      - run:
+          name: Run first things
+          command: |
+            echo "Running things"
+            sleep 10
+            echo "Done running things"
+  run-second:
+    docker:
+      - image: circleci/python:3.8.6
+    steps:
+      - run:
+          name: Run second things
+          command: |
+            echo "Done running second things"
+
+
+workflows:
+  welcome:
+    jobs:
+      - run-first
+      - approve-second:
+          type: approval
+          requires:
+            - run-first
+      - run-second:
+          requires:
+            - approve-second
+
+
