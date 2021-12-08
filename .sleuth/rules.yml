@@ -1,32 +1,38 @@
 rules:
-  - transition-mentioned-issues:
-      conditions:
-        - environment='Production'
-      actions: 
-        - transition_mentioned_issues: 
-            state: DONE
-  - run-deploy:
-      conditions:
-        - environment='Staging'
-      actions:
-        - trigger_build:
-            parameters:
-              run_deploy: true
-              environment: production
-  - trigger-approval:
-      conditions:
-        - environment='Production'
-      actions:
-        - slack_channel_approval:
-            name: 'Approve'
-            prompt: 'Deployment {{ deploy_slack }} by {{ authors_slack }} requires approval.'
-            channel: '#tmp'
-            votes_required: 1
-            authors_only: false
-            on_success:
-              - slack_channel_message:
-                  channel: '#tmp'
-                  message: 'Deployment {{ deploy_slack }} was successfully approved!'
+    - comment:
+        actions:
+        - notify_mentioned_issues
+        - transition_mentioned_issues:
+            state: resolved
+            resolution: fixed
+#  - transition-mentioned-issues:
+#      conditions:
+#        - environment='Production'
+#      actions: 
+#        - transition_mentioned_issues: 
+#            state: DONE
+#  - run-deploy:
+#      conditions:
+#        - environment='Staging'
+#      actions:
+#        - trigger_build:
+#            parameters:
+#              run_deploy: true
+#              environment: production
+#  - trigger-approval:
+#      conditions:
+#        - environment='Production'
+#      actions:
+#        - slack_channel_approval:
+#            name: 'Approve'
+#            prompt: 'Deployment {{ deploy_slack }} by {{ authors_slack }} requires approval.'
+#            channel: '#tmp'
+#            votes_required: 1
+#            authors_only: false
+#            on_success:
+#              - slack_channel_message:
+#                  channel: '#tmp'
+#                  message: 'Deployment {{ deploy_slack }} was successfully approved!'
 
 #   - label-if-big:
 #       description: "Label if big"
