@@ -1,5 +1,7 @@
 rules:
     - comment:
+        conditions:
+        - environment='Production'
         actions:
         - notify_mentioned_issues
         - transition_mentioned_issues:
