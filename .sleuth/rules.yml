@@ -1,7 +1,7 @@
 rules:
     - comment:
         conditions:
-        - deployed_for='1m'
+        - deployed_for>'1m'
         actions:
         - notify_mentioned_issues
 #  - transition-mentioned-issues:
