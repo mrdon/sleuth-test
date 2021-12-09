@@ -1,11 +1,9 @@
 rules:
     - comment:
         conditions:
-        - environment='Production'
+        - deployed_for='1m'
         actions:
         - notify_mentioned_issues
-        - transition_mentioned_issues:
-            state: Done
 #  - transition-mentioned-issues:
 #      conditions:
 #        - environment='Production'
