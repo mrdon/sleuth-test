@@ -4,7 +4,7 @@ rules:
         - environment='Production'
         actions:
         - update_mentioned_issues:
-            field_name: description
+            field_name: summary
             field_value: "{{ deploy_url }}"
 #  - transition-mentioned-issues:
 #      conditions:
