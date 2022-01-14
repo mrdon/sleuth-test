@@ -1,7 +1,7 @@
 rules:
     - update:
         conditions:
-        - environment='production'
+        - environment='Production'
         actions:
         - update_mentioned_issues:
             field_name: description
