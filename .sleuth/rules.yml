@@ -1,9 +1,11 @@
 rules:
-    - comment:
+    - update:
         conditions:
-        - deployed_for>'1m'
+        - environment='production'
         actions:
-        - notify_mentioned_issues
+        - update_mentioned_issues:
+            field_name: description
+            field_value: "{{ deploy_url }}"
 #  - transition-mentioned-issues:
 #      conditions:
 #        - environment='Production'
