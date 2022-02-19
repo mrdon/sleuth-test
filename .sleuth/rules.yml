@@ -1,11 +1,16 @@
 rules:
     - update:
         conditions:
-        - environment='Production'
+          - environment='Staging'
+          - future_deploy=true 
         actions:
-        - update_mentioned_issues:
-            field_name: summary
-            field_value: "{{ deploy_url }}"
+        - monitor_drift:
+            environment: production
+            threshold: 2m
+            on_over:
+              - add_deploy_tag: 'over'
+            on_under:
+              - add_deploy_tag: 'under'
 #  - transition-mentioned-issues:
 #      conditions:
 #        - environment='Production'
