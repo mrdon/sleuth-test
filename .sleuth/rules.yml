@@ -1,5 +1,5 @@
 rules:
-    - monitor_drift2ddda:
+    - monitor_drift2dddas:
         conditions:
           - environment='Staging'
           - future_deploy=true 
