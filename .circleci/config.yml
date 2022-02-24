@@ -17,8 +17,11 @@ jobs:
           name: Run first things
           command: |
             echo "Running things"
+            echo '{"tags": "blah"}' > sleuth.yml
             sleep 10
             echo "Done running things"
+      - store_artifacts:
+          path: sleuth.yml
   run-second:
     docker:
       - image: circleci/python:3.8.6
