@@ -17,7 +17,7 @@ jobs:
           name: Run first things
           command: |
             echo "Running things"
-            echo '{"tags": "blah"}' > sleuth.yml
+            echo '{"tags": ["blah"], "links": {"docs": "https://example.com"}}' > sleuth.yml
             sleep 10
             echo "Done running things"
       - store_artifacts:
