@@ -1,17 +1,24 @@
 rules:
-    - monitor_drift2dddas:
+    - slack_personal_message:
         conditions:
-          - environment='Staging'
-          - future_deploy=true 
+            - environment='Production'
         actions:
-        - monitor_drift:
-            environment: production
-            threshold: 2m
-            on_over:
-              - add_deploy_tag: 'over'
-            on_under:
-              - add_deploy_tag: 'under'
-#  - transition-mentioned-issues:
+        - slack_personal_message:
+            group: deployer
+            message: "hi!"
+#    - monitor_drift2dddas:
+#        conditions:
+#          - environment='Staging'
+#          - future_deploy=true 
+#        actions:
+#        - monitor_drift:
+#            environment: production
+#            threshold: 2m
+#            on_over:
+#              - add_deploy_tag: 'over'
+#            on_under:
+#              - add_deploy_tag: 'under'
+##  - transition-mentioned-issues:
 #      conditions:
 #        - environment='Production'
 #      actions: 
