@@ -7,9 +7,9 @@ rules:
             group: authors
             message: |
                 Your code was <{{deploy_url}}|deployed> and is unhealthy. Check these links:
-                  * &lt;https://datadog.com/dashboard/important-things|Important things graphs>
-                  * &lt;https://mylogs.com/dashboard/production_logs?sha={{deploy_revision}}|Prod logs for this deploy>
-                  * &lt;https://statuspage.com/myorg/create_incident|Update status page>
+                  * <https://datadog.com/dashboard/important-things|Important things graphs>
+                  * <https://mylogs.com/dashboard/production_logs?sha={{deploy_revision}}|Prod logs for this deploy>
+                  * <https://statuspage.com/myorg/create_incident|Update status page>
 
 
 #    - monitor_drift2dddas:
