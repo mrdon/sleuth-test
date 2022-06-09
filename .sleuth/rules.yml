@@ -6,6 +6,7 @@ rules:
         - slack_personal_message:
             group: deployer
             message: "hi!"
+
 #    - monitor_drift2dddas:
 #        conditions:
 #          - environment='Staging'
