@@ -4,7 +4,7 @@ rules:
             - environment='Production'
         actions:
         - slack_personal_message:
-            group: deployer
+            group: authors
             message: "hi!"
 
 
