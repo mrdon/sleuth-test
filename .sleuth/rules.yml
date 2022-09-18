@@ -6,7 +6,7 @@ rules:
         - slack_channel_message:
             channel: "#tmp"
             message: >-
-            {{ pull_request_slack} is stale. Please update.
+            {{ pull_request_slack }} is stale. Please update.
 #   - label-if-big:
 #       description: "Label if big"
 #       conditions:
