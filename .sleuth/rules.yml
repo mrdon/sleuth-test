@@ -1,7 +1,7 @@
 rules:
   - label-if-stale:
     conditions:
-      - stale_for>"1d"
+      - "stale_for>'1d'"
     actions:
       - webhook: "https://example.com" 
 #   - label-if-big:
