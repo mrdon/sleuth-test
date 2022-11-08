@@ -1,12 +1,16 @@
 rules:
-  - label-if-stale:
-      conditions:
-        - stale_for>'5d'
+#   - label-if-stale:
+#       conditions:
+#         - stale_for>'5d'
+#       actions:
+#         - slack_channel_message:
+#             channel: "#tmp"
+#             message: >-
+#                 PR {{ pull_request_id}} - {{ pull_request_slack }} - is stale. Please update..
+  - comment-linear:
       actions:
-        - slack_channel_message:
-            channel: "#tmp"
-            message: >-
-                PR {{ pull_request_id}} - {{ pull_request_slack }} - is stale. Please update..
+        - notify_mentioned_issues
+    
 #   - label-if-big:
 #       description: "Label if big"
 #       conditions:
