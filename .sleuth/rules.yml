@@ -1,5 +1,7 @@
 rules:
   - comment-linear:
+      conditions:
+        - environment='Production'
       actions:
         - notify_mentioned_issues
     
