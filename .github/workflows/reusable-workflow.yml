@@ -1,0 +1,13 @@
+
+name: Reusable
+
+on:
+  workflow_call: {}
+
+jobs:
+    runs-on: ubuntu-latest
+    steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo This is reusable!
+

@@ -40,3 +40,5 @@ jobs:
         with:
           name: sleuth.yml
           path: sleuth.yml
+  call-workflow:
+    uses: ./.github/workflows/reusable-workflow.yml
