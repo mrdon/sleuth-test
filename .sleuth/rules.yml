@@ -9,3 +9,4 @@ rules:
         - future_deploy=false
       actions:
         - send_event  
+
