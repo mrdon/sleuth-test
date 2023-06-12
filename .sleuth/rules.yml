@@ -1,7 +1,11 @@
 rules:
-  - comment-linear:
-      conditions:
-        - environment='Production'
+  - sent-pr-events:
+      triggers:
+        - pr_opened
       actions:
-        - notify_mentioned_issues
-    
+        - send_event
+  - send-deploy-events:
+      conditions:
+        - future_deploy=false
+      actions:
+        - send_event  
